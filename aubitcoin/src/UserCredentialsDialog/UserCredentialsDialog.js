@@ -1,3 +1,4 @@
+import { createTheme, ThemeProvider, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -6,25 +7,42 @@ import React, { useState } from "react";
 import "./UserCredentialsDialog.css";
 
 
+let theme = createTheme({
+  palette: {
+    primary:{
+      main: "#191D24"
+    },
+    secondary: {
+      main : "#ffffff"
+    }
+  }
+})
+
 
 export default function UserCredentialsDialog({
   open,
   onSubmit,
   onClose,
   title,
+  onCreateNew,
   submitText,
 }) {
   let [username, setUsername] = useState("");
   let [password, setPassword] = useState("");
   return (
+
+    <ThemeProvider theme={theme}>
+
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
       <div className="dialog-container">
-        <DialogTitle>{title}</DialogTitle>
+        <DialogTitle><Typography variant="h4">{title}</Typography></DialogTitle>
         <div className="form-item">
           <TextField
             fullWidth
+            color="secondary"
             label="Username"
             type="text"
+            sx={{input: {color: "white"}}}
             value={username}
             onChange={({ target: { value } }) => setUsername(value)}
           />
@@ -32,14 +50,18 @@ export default function UserCredentialsDialog({
         <div className="form-item">
           <TextField
             fullWidth
+            color = "secondary"
             label="Password"
             type="password"
+            sx={{input: {color: "white"}}}
             value={password}
             onChange={({ target: { value } }) => setPassword(value)}
           />
         </div>
-        <Button 
-          color= "primary"
+        <p>Do not have an account,<Button>click here</Button></p>
+        <br></br>
+        <Button
+          sx={{backgroundColor: "#222732"}}
           variant="contained"
           onClick={() => onSubmit(username, password)}
         >
@@ -47,5 +69,6 @@ export default function UserCredentialsDialog({
         </Button>
       </div>
     </Dialog>
+    </ThemeProvider>
   );
 }

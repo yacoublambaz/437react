@@ -26,21 +26,26 @@ body::-webkit-scrollbar-thumb{
   width: 5rem;
   background-color: var(--secondaryBack);
 }
+
 .navbar-li{
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  height: 100%;
 }
+
+.last{
+  margin-top: auto;
+}
+
 .navbar-icon:hover{
   transition: 600ms;
   color: var(--ourYellow);
 }
 
 .logoIm{
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   object-fit:contain;
-  object-position: -11px -13px;
-  
+  object-position: -20px -20px;
 }

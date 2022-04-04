@@ -5,9 +5,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import LoginIcon from '@mui/icons-material/Login';
-import { IconButton,Typography,Button,Toolbar,AppBar, makeStyles, Box, List, ListItem, Icon , SvgIcon} from "@mui/material";  
-import ABC from "./abc.svg";
-
+import { IconButton,Typography,Button,Toolbar,AppBar, Box, List, ListItem, Icon } from "@mui/material";  
+import UserCredentialsDialog from "./UserCredentialsDialog/UserCredentialsDialog";
 
 var SERVER_URL = "http://127.0.0.1:5000";
 
@@ -60,12 +59,21 @@ function App() {
   }
   return (
     <div className="App">
+
+
+    <UserCredentialsDialog
+        open={States.USER_LOG_IN === authState}
+        title={"LOGIN"}
+        onClose={() => setAuthState(States.PENDING)}
+        submitText={"Login"}
+        onSubmit={login}/>
+
+
       <Box className="navbar">
         <List className="navbar-li">
-        <ListItem >
-          
-          </ListItem>
-          <IconButton><Icon style={{width:40, height:40}}><img className="logoIm" src="./abc.png"/></Icon></IconButton>
+        <ListItem>
+          <IconButton><Icon style={{width:40, height:40}}><img className="logoIm" src="./abc.png"/></Icon></IconButton> 
+          </ListItem>  
           <ListItem >
           <IconButton><HomeIcon className="navbar-icon" sx={{color: "white", fontSize: 40}}/></IconButton>
           </ListItem>
@@ -75,13 +83,13 @@ function App() {
           <ListItem>
             <IconButton><SearchIcon className="navbar-icon" sx={{color: "white", fontSize: 40}}/></IconButton>
           </ListItem>
-          <ListItem>
-            <IconButton><LoginIcon className="navbar-icon" sx={{color: "white", fontSize: 40}}/></IconButton>
+          <ListItem className="last">
+            <IconButton onClick={() => setAuthState(States.USER_LOG_IN)}><LoginIcon className="navbar-icon" sx={{color: "white", fontSize: 40}}/></IconButton>
           </ListItem>
-
         </List>
-
       </Box>
+
+
     </div>
   );
 }
