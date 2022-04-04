@@ -18,8 +18,7 @@ let theme = createTheme({
   }
 })
 
-
-export default function UserCredentialsDialog({
+export default function LoginDialog({
   open,
   onSubmit,
   onClose,
@@ -58,7 +57,7 @@ export default function UserCredentialsDialog({
             onChange={({ target: { value } }) => setPassword(value)}
           />
         </div>
-        <p>Do not have an account,<Button>click here</Button></p>
+        <p>Do not have an account,<Button onClick={()=>onCreateNew()}>click here</Button></p>
         <br></br>
         <Button
           sx={{backgroundColor: "#222732"}}
