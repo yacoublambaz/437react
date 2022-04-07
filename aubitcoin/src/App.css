@@ -1,60 +1,130 @@
-:root{
+:root {
   --secondaryBack: #222732;
-  --primaryBack: #191D24;
-  --ourYellow: #F3C317;
-  --ourGrey: #343A45;
-  --ourGreen: #1A8926;
-  --ourRed: #891A1A;
+  --primaryBack: #191d24;
+  --ourYellow: #f3c317;
+  --ourGrey: #343a45;
+  --ourGreen: #1a8926;
+  --ourRed: #891a1a;
 }
 
-body{
+body {
   background-color: var(--primaryBack);
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   width: 0.4rem;
 }
-body::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track {
   background: var(--primaryBack);
 }
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
   background: var(--secondaryBack);
 }
 
-html{
-  overflow: hidden;
-}
-.navbar{
+.navbar {
   height: 100vh;
   width: 5rem;
   background-color: var(--secondaryBack);
 }
 
-.navbar-li{
+.navbar-li {
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 100%;
 }
 
-.last{
+.last {
   margin-top: auto;
 }
 
-.navbar-icon:hover{
+.navbar-icon:hover {
   transition: 600ms;
   color: var(--ourYellow);
 }
 
-.logoIm{
+.logoIm {
   width: 80px;
   height: 80px;
-  object-fit:contain;
+  object-fit: contain;
   object-position: -20px -20px;
 }
 
-.bubbles{
+.bubbles {
   position: fixed;
-  margin-left: 20rem;
+  margin-left: 12rem;
 }
 
+.avatarBox {
+  margin-left: 5vw;
+  margin-top: 20vh;
+  align-items: center;
+}
+
+.balanceBox{
+  align-items: center;
+  margin-left: 2vw;
+  padding: 0;
+}
+
+.balanceIm {
+  width: 80px;
+  height: 80px;
+}
+
+.tabs {
+  margin-top: 0vh;
+  margin-left: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  font-family: sans-serif;
+}
+
+.tabs__label {
+  color: white;
+  font-family: "Arial";
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.tabs__radio {
+  display: none;
+}
+
+.tabs__content {
+  order: 1;
+  margin-top: 3vh;
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 100vw;
+  line-height: 1.5;
+  font-size: 0.9em;
+  display: none;
+}
+
+.tabs__content::-webkit-scrollbar{
+  width: 0.4rem;
+}
+.tabs__content::-webkit-scrollbar-thumb{
+  background: var(--secondaryBack);
+}
+.tabs__content::-webkit-scrollbar-track{
+  background: var(--primaryBack);
+}
+
+.tabs__radio:checked + .tabs__label {
+  font-weight: bold;
+  background-color: var(--secondaryBack);
+  border: var(--secondaryBack) solid 1px;
+  border-radius: 13px;
+}
+
+.tabs__radio:checked + .tabs__label + .tabs__content {
+  display: initial;
+}
+
+html{
+  overflow: hidden;
+}
