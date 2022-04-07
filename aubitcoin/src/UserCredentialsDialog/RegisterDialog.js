@@ -27,7 +27,7 @@ export default function RegisterDialog({
 }) {
   let [username, setUsername] = useState("");
   let [email, setEmail] = useState("");
-  let [AUBid,setAUBid] = useState("");
+  let [aubId,setAubId] = useState("");
   let [password, setPassword] = useState("");
   return (
 
@@ -54,8 +54,8 @@ export default function RegisterDialog({
             label="AUBID"
             type="number"
             sx={{input: {color: "white"}}}
-            value={AUBid}
-            onChange={({ target: { value } }) => setAUBid(value)}
+            value={aubId}
+            onChange={({ target: { value } }) => setAubId(value)}
           />
         </div>
         <div className="form-item">
@@ -84,7 +84,7 @@ export default function RegisterDialog({
         <Button
           sx={{backgroundColor: "#222732"}}
           variant="contained"
-          onClick={() => onSubmit(username, password)}
+          onClick={() => onSubmit(username, password, aubId, email)}
         >
           {submitText}
         </Button>

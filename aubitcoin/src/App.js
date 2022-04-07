@@ -60,7 +60,7 @@ function App() {
       });
   }
 
-  function createUser(username, password) {
+  function createUser(username, password,aubId, aubEmail) {
     return fetch(`${SERVER_URL}/signUp`, {
       method: "POST",
       headers: {
@@ -69,6 +69,8 @@ function App() {
       body: JSON.stringify({
         user_name: username,
         password: password,
+        aub_id : aubId,
+        aub_email : aubEmail
       }),
     }).then((response) => login(username, password));
   }
