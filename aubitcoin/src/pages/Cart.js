@@ -24,9 +24,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { ConstraintLayout, ConstraintGuide } from "react-constraint-layout";
 import BoughtTransaction from "../transaction/boughtTransaction";
 import SoldTransaction from "../transaction/soldTransaction";
-import Cart from "./Cart"
 
-function Home(){
+function Cart(){
     const navigate = useNavigate();
 
     function Gotomain(){
@@ -42,7 +41,7 @@ function Home(){
     }
 
     return(
-        <><div style={{color:"white"}}>Welcome to Home</div>
+        <><div style={{color:"white"}}>Welcome to Cart</div>
             <Box display="flex" flexDirection="row">
                 <Box className="navbar">
                     <List className="navbar-li">
@@ -80,4 +79,5 @@ function Home(){
         </>
     )
 }
-export default Home;
+export default Cart;
+
