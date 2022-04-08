@@ -27,7 +27,7 @@ export default function RegisterDialog({
 }) {
   let [username, setUsername] = useState("");
   let [email, setEmail] = useState("");
-  let [aubId,setAubId] = useState("");
+  let [user_id,setUserId] = useState("");
   let [password, setPassword] = useState("");
   return (
 
@@ -40,22 +40,11 @@ export default function RegisterDialog({
           <TextField
             fullWidth
             color = "secondary"
-            label="Email"
-            type="email"
-            sx={{input: {color: "white"}}}
-            value={email}
-            onChange={({ target: { value } }) => setEmail(value)}
-          />
-        </div>
-        <div className="form-item">
-          <TextField
-            fullWidth
-            color = "secondary"
             label="AUBID"
-            type="number"
+            type="text"
             sx={{input: {color: "white"}}}
-            value={aubId}
-            onChange={({ target: { value } }) => setAubId(value)}
+            value={user_id}
+            onChange={({ target: { value } }) => setUserId(value)}
           />
         </div>
         <div className="form-item">
@@ -80,11 +69,22 @@ export default function RegisterDialog({
             onChange={({ target: { value } }) => setPassword(value)}
           />
         </div>
+        <div className="form-item">
+          <TextField
+            fullWidth
+            color = "secondary"
+            label="Email"
+            type="email"
+            sx={{input: {color: "white"}}}
+            value={email}
+            onChange={({ target: { value } }) => setEmail(value)}
+          />
+        </div>
         
         <Button
           sx={{backgroundColor: "#222732"}}
           variant="contained"
-          onClick={() => onSubmit(username, password, aubId, email)}
+          onClick={() => onSubmit(user_id, username, password, email)}
         >
           {submitText}
         </Button>

@@ -44,15 +44,18 @@ function App() {
   let [userToken, setUserToken] = useState(getUserToken());
   let [authState, setAuthState] = useState(States.PENDING);
   let [pageState, setpageState] = useState(Pages.Home);
+  let [userId, setUserId] = useState(null);
+  let [userName, setUserName] = useState(null);
+  let [userBalance, setUserBalance] = useState(0);
 
-  function login(username, password) {
+  function login(user_id, password) {
     return fetch(`${SERVER_URL}/authentication`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user_name: username,
+        user_id: user_id,
         password: password,
       }),
     })
@@ -61,22 +64,25 @@ function App() {
         setAuthState(States.USER_AUTHENTICATED);
         setUserToken(body.token);
         saveUserToken(body.token);
+        setUserId(user_id);
+        setUserName(body.user_name);
+        setUserBalance(body.balance);
       });
   }
 
-  function createUser(username, password, aubId, aubEmail) {
+  function createUser(user_id, username, password, aubEmail) {
     return fetch(`${SERVER_URL}/signUp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        user_id: user_id,
         user_name: username,
         password: password,
-        aub_id: aubId,
-        aub_email: aubEmail,
+        email: aubEmail,
       }),
-    }).then((response) => login(username, password));
+    }).then((response) => login(user_id, password));
   }
 
   function logout() {
@@ -163,17 +169,19 @@ function App() {
             src={require("./graphics/bubbles.png")}
           ></img>
 
+          {userToken !== null ? (
+          <div>
           <Box display="flex" flexDirection="column">
             <Box className="avatarBox" display="flex" flexDirection="row">
               <Avatar
                 sx={{
                   width: 100,
                   height: 100,
-                  fontSize: 50,
+                  fontSize: 40,
                   backgroundColor: "#F3C317",
                 }}
               >
-                ZZ
+                {userName[0].toUpperCase()}
               </Avatar>
               <Box display="flex" flexDirection="column">
                 <Typography
@@ -185,7 +193,7 @@ function App() {
                   }}
                   className="avatarBox-text"
                 >
-                  Zein Zebib LINE 186
+                  {userName}
                 </Typography>
                 <Typography
                   sx={{
@@ -196,7 +204,7 @@ function App() {
                   }}
                   className="avatarBox-text"
                 >
-                  202002343 LINE 197
+                  {userId}
                 </Typography>
               </Box>
             </Box>
@@ -209,7 +217,7 @@ function App() {
                   color: "white",
                 }}
               >
-                1.0 ABC LINE 210
+                {userBalance} ABC
               </Typography>
             </Box>
           </Box>
@@ -334,6 +342,8 @@ function App() {
               </List>
             </div>
           </div>
+          </div>
+          ):(<div></div>)}
         </Box>
       </Box>
     </div>
