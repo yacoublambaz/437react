@@ -37,6 +37,17 @@ export default function RegisterDialog({
       <div className="dialog-container">
         <DialogTitle><Typography variant="h4">{title}</Typography></DialogTitle>
         <div className="form-item">
+        <div className="form-item">
+          <TextField
+            fullWidth
+            color = "secondary"
+            label="Email"
+            type="email"
+            sx={{input: {color: "white"}}}
+            value={email}
+            onChange={({ target: { value } }) => setEmail(value)}
+          />
+        </div>
           <TextField
             fullWidth
             color = "secondary"
@@ -67,17 +78,6 @@ export default function RegisterDialog({
             sx={{input: {color: "white"}}}
             value={password}
             onChange={({ target: { value } }) => setPassword(value)}
-          />
-        </div>
-        <div className="form-item">
-          <TextField
-            fullWidth
-            color = "secondary"
-            label="Email"
-            type="email"
-            sx={{input: {color: "white"}}}
-            value={email}
-            onChange={({ target: { value } }) => setEmail(value)}
           />
         </div>
         
