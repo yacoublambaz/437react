@@ -1,11 +1,8 @@
 import "../App.css";
-import React, { useState } from "react";
-import { getUserToken, saveUserToken, clearUserToken } from "../localStorage";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
-import LoginIcon from "@mui/icons-material/Login";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import {
   IconButton,
   Typography,
@@ -18,13 +15,6 @@ import {
   Avatar,
   Icon,
 } from "@mui/material";
-import LoginDialog from "../UserCredentialsDialog/LoginDialog";
-import RegisterDialog from "../UserCredentialsDialog/RegisterDialog";
-import LogoutIcon from "@mui/icons-material/Logout";
-import { ConstraintLayout, ConstraintGuide } from "react-constraint-layout";
-import BoughtTransaction from "../transaction/boughtTransaction";
-import SoldTransaction from "../transaction/soldTransaction";
-import Cart from "./Cart"
 
 function Home(){
     const navigate = useNavigate();
@@ -42,12 +32,13 @@ function Home(){
     }
 
     return(
-        <><div style={{color:"white"}}>Welcome to Home</div>
+        <>
+        <Box display="flex" flexDirection="row">
             <Box display="flex" flexDirection="row">
                 <Box className="navbar">
                     <List className="navbar-li">
                         <ListItem>
-                            <IconButton>
+                            <IconButton onClick={Gotomain}>
                                 <Icon style={{ width: 40, height: 40 }}>
                                     <img className="logoIm" src="./abc.png" />
                                 </Icon>
@@ -76,6 +67,12 @@ function Home(){
                         </ListItem>
                     </List>
                 </Box>
+            </Box>
+
+            <Box className="mainContent">
+
+            </Box>
+
             </Box>
         </>
     )

@@ -5,13 +5,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
-import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import {
   IconButton,
   Typography,
-  Button,
-  Toolbar,
-  AppBar,
   Box,
   List,
   ListItem,
@@ -21,22 +17,14 @@ import {
 import LoginDialog from "../UserCredentialsDialog/LoginDialog";
 import RegisterDialog from "../UserCredentialsDialog/RegisterDialog";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { ConstraintLayout, ConstraintGuide } from "react-constraint-layout";
 import BoughtTransaction from "../transaction/boughtTransaction";
 import SoldTransaction from "../transaction/soldTransaction";
-import Cart from "./Cart"
-import Home from "./Home"
+import { useNavigate } from "react-router-dom";
 
 var SERVER_URL = "http://127.0.0.1:5000";
 
 function Profile() {
-  const Pages = {
-    PROFILE: "PROFILE",
-    HOME: "HOME",
-    CART: "CART",
-    SEARCH: "SEARCH",
-  };
-
+ 
   const States = {
     PENDING: "PENDING",
     USER_CREATION: "USER_CREATION",
@@ -47,7 +35,6 @@ function Profile() {
 
   let [userToken, setUserToken] = useState(getUserToken());
   let [authState, setAuthState] = useState(States.PENDING);
-  let [pageState, setpageState] = useState(Pages.Home);
   let [userId, setUserId] = useState(null);
   let [userName, setUserName] = useState(null);
   let [userBalance, setUserBalance] = useState(0);
