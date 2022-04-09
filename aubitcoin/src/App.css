@@ -2,9 +2,11 @@
   --secondaryBack: #222732;
   --primaryBack: #191d24;
   --ourYellow: #f3c317;
-  --ourGrey: #343a45;
+  --ourLightRed: #ff0000;
   --ourGreen: #1a8926;
   --ourRed: #891a1a;
+  --ourPink: #bf24c2;
+  --ourWhite: #ffffff;
 }
 
 body {
@@ -40,7 +42,7 @@ body::-webkit-scrollbar-thumb {
 
 .navbar-icon:hover {
   transition: 600ms;
-  color: var(--ourYellow);
+  color: var(--ourWhite);
 }
 
 .logoIm {
