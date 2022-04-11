@@ -238,7 +238,7 @@ function Home() {
               Meal of the Day
             </label>
             <div className="tabs__content">
-            <List>
+              <List>
                 <ListItem>
                   <ItemComponent
                     ItemName={"Batata Harra"}
@@ -247,7 +247,7 @@ function Home() {
                     }
                     ItemPrice={1.5}
                     ImageSrc={AnotherIm}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                   />
                 </ListItem>
                 <ListItem>
@@ -258,19 +258,7 @@ function Home() {
                     }
                     ItemPrice={1.5}
                     ImageSrc={AnotherIm}
-                    ItemShop = {"T-Marbouta"}
-                  />
-                </ListItem>
-
-                <ListItem>
-                  <ItemComponent
-                    ItemName={"Batata Harra"}
-                    ItemDescription={
-                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
-                    }
-                    ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
-                    ImageSrc={AnotherIm}
+                    ItemShop={"T-Marbouta"}
                   />
                 </ListItem>
 
@@ -281,7 +269,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -293,10 +281,22 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
-                </ListItem> 
+                </ListItem>
+
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ItemShop={"T-Marbouta"}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
               </List>
             </div>
 
@@ -318,7 +318,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -329,7 +329,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -346,7 +346,7 @@ function Home() {
               Sanwiches
             </label>
             <div className="tabs__content">
-            <List>
+              <List>
                 <ListItem>
                   <ItemComponent
                     ItemName={"Batata Harra"}
@@ -354,7 +354,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -365,13 +365,11 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ItemShop = {"T-Marbouta"}
+                    ItemShop={"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
               </List>
-
-
             </div>
           </div>
         </Box>

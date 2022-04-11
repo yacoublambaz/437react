@@ -177,6 +177,25 @@ function Cart() {
             </ListItem>
           </List>
         </Box>
+
+        <Box className="mainContent">
+            <Typography sx={{color: "white", fontWeight: "bolder" ,marginLeft:"5rem", marginTop: "5rem"}} variant="h4">Your Cart</Typography>
+            <Box className="balanceBox" display="flex" flexDirection="row">
+              <img className="balanceIm" src="./abc.png" />
+              <Typography
+                sx={{
+                  fontFamily: "Arial",
+                  fontWeight: "bolder",
+                  color: "white",
+                }}
+              >
+                {userBalance} ABC
+              </Typography>
+            </Box>
+
+            
+
+        </Box>
       </Box>
     </div>
   );

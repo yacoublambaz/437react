@@ -1,24 +1,22 @@
-:root{
-    --secondaryBack: #222732;
-    --primaryBack: #191D24;
-    --ourYellow: #F3C317;
-    --ourGrey: #343A45;
-    --ourGreen: #1A8926;
-    --ourRed: #891A1A;
-
-  }
-  
-.dialog-container {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--ourGrey);
+:root {
+  --secondaryBack: #222732;
+  --primaryBack: #191d24;
+  --ourYellow: #f3c317;
+  --ourGrey: #343a45;
+  --ourGreen: #1a8926;
+  --ourRed: #891a1a;
 }
 
+.dialog-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--ourGrey);
+}
 
 .form-item {
-    margin-bottom: 20px;
-    padding: 0px 10px;
-    width: fill;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+  width: fill;
 }
