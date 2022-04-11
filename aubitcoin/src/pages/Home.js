@@ -247,6 +247,7 @@ function Home() {
                     }
                     ItemPrice={1.5}
                     ImageSrc={AnotherIm}
+                    ItemShop = {"T-Marbouta"}
                   />
                 </ListItem>
                 <ListItem>
@@ -256,6 +257,19 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                    ItemShop = {"T-Marbouta"}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -267,6 +281,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -278,17 +293,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
-                    ImageSrc={AnotherIm}
-                  />
-                </ListItem>
-
-                <ListItem>
-                  <ItemComponent
-                    ItemName={"Batata Harra"}
-                    ItemDescription={
-                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
-                    }
-                    ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem> 
@@ -313,6 +318,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -323,6 +329,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -347,6 +354,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
@@ -357,6 +365,7 @@ function Home() {
                       "Potatoes in herbs and spicy sauce. Lebanse speciallty"
                     }
                     ItemPrice={1.5}
+                    ItemShop = {"T-Marbouta"}
                     ImageSrc={AnotherIm}
                   />
                 </ListItem>
