@@ -6,7 +6,9 @@
   --ourGreen: #1a8926;
   --ourRed: #891a1a;
   --ourPink: #bf24c2;
+  --ourGrey: #808080;
   --ourWhite: #ffffff;
+  font-family: "Arial Black";
 }
 
 body {
@@ -63,7 +65,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.balanceBox{
+.balanceBox {
   align-items: center;
   margin-left: 2vw;
   padding: 0;
@@ -106,13 +108,13 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
-.tabs__content::-webkit-scrollbar{
+.tabs__content::-webkit-scrollbar {
   width: 0.4rem;
 }
-.tabs__content::-webkit-scrollbar-thumb{
+.tabs__content::-webkit-scrollbar-thumb {
   background: var(--secondaryBack);
 }
-.tabs__content::-webkit-scrollbar-track{
+.tabs__content::-webkit-scrollbar-track {
   background: var(--primaryBack);
 }
 
@@ -127,6 +129,6 @@ body::-webkit-scrollbar-thumb {
   display: initial;
 }
 
-html{
+html {
   overflow: hidden;
 }

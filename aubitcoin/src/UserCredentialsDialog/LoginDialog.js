@@ -39,7 +39,7 @@ export default function LoginDialog({
           <TextField
             fullWidth
             color="secondary"
-            label="User ID"
+            label="Username"
             type="text"
             sx={{input: {color: "white"}}}
             value={username}

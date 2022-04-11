@@ -1,4 +1,5 @@
 import "../App.css";
+import "../alilce.css";
 import React, { useState } from "react";
 import { getUserToken, saveUserToken, clearUserToken } from "../localStorage";
 import HomeIcon from "@mui/icons-material/Home";
@@ -10,7 +11,6 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
 import {
   IconButton,
   Typography,
@@ -32,6 +32,8 @@ import SoldTransaction from "../transaction/soldTransaction";
 import Cart from "./Cart";
 import { SERVER_URL } from "../App";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
+import ShopComponent from "../ShopComponent/ShopComponent";
+import ItemComponent from "../ItemComponent/ItemComponent";
 
 function Home() {
   const navigate = useNavigate();
@@ -80,6 +82,9 @@ function Home() {
   let [userBalance, setUserBalance] = useState(0);
   let [userInitial, setUserInitial] = useState(null);
 
+  const AnImage = require("../shop.png");
+  const AnotherIm = require("../batata.png");
+
   function login(user_id, password) {
     return fetch(`${SERVER_URL}/authentication`, {
       method: "POST",
@@ -118,28 +123,13 @@ function Home() {
     }).then((response) => login(user_id, password));
   }
 
-  const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
-  };
-
   const items = [
-    <div className="item" data-value="1">
-      1
-    </div>,
-    <div className="item" data-value="2">
-      2
-    </div>,
-    <div className="item" data-value="3">
-      3
-    </div>,
-    <div className="item" data-value="4">
-      4
-    </div>,
-    <div className="item" data-value="5">
-      5
-    </div>,
+    <ShopComponent ImageSrc={AnImage} Name={"Community Shop"} />,
+    <ShopComponent ImageSrc={AnImage} Name={"Community Shop"} />,
+    <ShopComponent ImageSrc={AnImage} Name={"Community Shop"} />,
+    <ShopComponent ImageSrc={AnImage} Name={"Community Shop"} />,
+    <ShopComponent ImageSrc={AnImage} Name={"Community Shop"} />,
+    <ShopComponent ImageSrc={AnImage} Name={"Community Shop"} />,
   ];
 
   return (
@@ -214,25 +204,167 @@ function Home() {
           </List>
         </Box>
 
-        <Box
-          display="flex"
-          flexDirection="column"
-          color={"white"}
-          marginLeft={"10px"}
-        >
-          <Box className="header">
-            <Typography variant="h4">Home</Typography>
-          </Box>
-          <Box className="shops"></Box>
-        </Box>
-
-        <Box>
+        <Box className="mainContent">
           <AliceCarousel
-            mouseTracking
+            disableButtonsControls={"true"}
+            className="Carousel"
             items={items}
-            responsive={responsive}
-            controlsStrategy="alternate"
           />
+
+          <Box display="flex" flexDirection="column">
+            <Box className="balanceBox" display="flex" flexDirection="row">
+              <img className="balanceIm" src="./abc.png" />
+              <Typography
+                sx={{
+                  fontFamily: "Arial",
+                  fontWeight: "bolder",
+                  color: "white",
+                }}
+              >
+                {userBalance} ABC
+              </Typography>
+            </Box>
+          </Box>
+
+          <div className="tabs">
+            <input
+              type="radio"
+              className="tabs__radio"
+              name="tabs-example"
+              id="tab1"
+              checked
+            />
+            <label htmlFor="tab1" className="tabs__label">
+              Meal of the Day
+            </label>
+            <div className="tabs__content">
+            <List>
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem> 
+              </List>
+            </div>
+
+            <input
+              type="radio"
+              className="tabs__radio"
+              name="tabs-example"
+              id="tab2"
+            />
+            <label htmlFor="tab2" className="tabs__label">
+              Mezza
+            </label>
+            <div className="tabs__content">
+              <List>
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+              </List>
+            </div>
+
+            <input
+              type="radio"
+              className="tabs__radio"
+              name="tabs-example"
+              id="tab3"
+            />
+            <label htmlFor="tab3" className="tabs__label">
+              Sanwiches
+            </label>
+            <div className="tabs__content">
+            <List>
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+                <ListItem>
+                  <ItemComponent
+                    ItemName={"Batata Harra"}
+                    ItemDescription={
+                      "Potatoes in herbs and spicy sauce. Lebanse speciallty"
+                    }
+                    ItemPrice={1.5}
+                    ImageSrc={AnotherIm}
+                  />
+                </ListItem>
+              </List>
+
+
+            </div>
+          </div>
         </Box>
       </Box>
     </div>

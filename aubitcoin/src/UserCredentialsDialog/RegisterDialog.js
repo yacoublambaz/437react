@@ -31,6 +31,9 @@ export default function RegisterDialog({
   let [password, setPassword] = useState("");
   return (
 
+
+
+    
     <ThemeProvider theme={theme}>
 
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
@@ -40,8 +43,19 @@ export default function RegisterDialog({
           <TextField
             fullWidth
             color = "secondary"
+            label="Email"
+            type="email"
+            sx={{input: {color: "white"}}}
+            value={email}
+            onChange={({ target: { value } }) => setEmail(value)}
+          />
+        </div>
+        <div className="form-item">
+          <TextField
+            fullWidth
+            color = "secondary"
             label="AUBID"
-            type="text"
+            type="number"
             sx={{input: {color: "white"}}}
             value={user_id}
             onChange={({ target: { value } }) => setUserId(value)}
@@ -67,17 +81,6 @@ export default function RegisterDialog({
             sx={{input: {color: "white"}}}
             value={password}
             onChange={({ target: { value } }) => setPassword(value)}
-          />
-        </div>
-        <div className="form-item">
-          <TextField
-            fullWidth
-            color = "secondary"
-            label="Email"
-            type="email"
-            sx={{input: {color: "white"}}}
-            value={email}
-            onChange={({ target: { value } }) => setEmail(value)}
           />
         </div>
         

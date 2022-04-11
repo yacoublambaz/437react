@@ -1,4 +1,6 @@
 import "../App.css";
+import "./Search.css"
+import algoliasearch from 'algoliasearch/lite';
 import React, { useState } from "react";
 import { getUserToken, saveUserToken, clearUserToken } from "../localStorage";
 import HomeIcon from "@mui/icons-material/Home";
@@ -27,6 +29,17 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { ConstraintLayout, ConstraintGuide } from "react-constraint-layout";
 import BoughtTransaction from "../transaction/boughtTransaction";
 import SoldTransaction from "../transaction/soldTransaction";
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Pagination,
+  Highlight,
+  ClearRefinements,
+  RefinementList,
+  Configure,
+} from 'react-instantsearch-dom';
+import PropTypes from 'prop-types';
 import { SERVER_URL } from "../App";
 
 function Search() {
@@ -37,6 +50,27 @@ function Search() {
     USER_AUTHENTICATED: "USER_AUTHENTICATED",
     HOME: "HOME",
   };
+
+  
+function Hit(props) {
+  return (
+    <div>
+      <img src={props.hit.image} align="left" alt={props.hit.name} />
+      <div className="hit-name">
+        <Highlight attribute="name" hit={props.hit} />
+      </div>
+      <div className="hit-description">
+        <Highlight attribute="description" hit={props.hit} />
+      </div>
+      <div className="hit-price">${props.hit.price}</div>
+    </div>
+  );
+}
+
+Hit.propTypes = {
+  hit: PropTypes.object.isRequired,
+};
+
 
   let [userToken, setUserToken] = useState(getUserToken());
   let [authState, setAuthState] = useState(States.PENDING);
@@ -105,6 +139,11 @@ function Search() {
     setUserToken(null);
     clearUserToken();
   }
+
+  const searchClient = algoliasearch(
+    'B1G2GM9NG0',
+    'aadef574be1f9252bb48d4ea09b5cfe5'
+  );
 
   return (
     <div className="App">
@@ -176,6 +215,37 @@ function Search() {
               )}
             </ListItem>
           </List>
+        </Box>
+
+        <Box className="mainContent">
+
+        <div className="ais-InstantSearch">
+        <h1>React InstantSearch e-commerce demo</h1>
+        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
+          <div className="left-panel">
+            <ClearRefinements />
+            <h2>Brands</h2>
+            <RefinementList attribute="brand" />
+            <Configure hitsPerPage={8} />
+          </div>
+          <div className="right-panel">
+            <SearchBox />
+            <Hits hitComponent={Hit} />
+            <Pagination />
+          </div>
+        </InstantSearch>
+      </div><div className="ais-InstantSearch">
+        <h1>Search</h1>
+        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
+          <div className="right-panel">
+            <SearchBox />
+            <Hits hitComponent={Hit} />
+            <Pagination />
+          </div>
+        </InstantSearch>
+      </div>
+            
+
         </Box>
       </Box>
     </div>
