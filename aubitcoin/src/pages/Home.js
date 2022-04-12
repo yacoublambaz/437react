@@ -4,34 +4,22 @@ import React, { useState } from "react";
 import { getUserToken, saveUserToken, clearUserToken } from "../localStorage";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import ChildCareIcon from "@mui/icons-material/ChildCare";
 import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import {
   IconButton,
   Typography,
-  Button,
-  Toolbar,
-  AppBar,
   Box,
   List,
   ListItem,
-  Avatar,
   Icon,
 } from "@mui/material";
 import LoginDialog from "../UserCredentialsDialog/LoginDialog";
 import RegisterDialog from "../UserCredentialsDialog/RegisterDialog";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { ConstraintLayout, ConstraintGuide } from "react-constraint-layout";
-import BoughtTransaction from "../transaction/boughtTransaction";
-import SoldTransaction from "../transaction/soldTransaction";
-import Cart from "./Cart";
 import { SERVER_URL } from "../App";
-import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import ShopComponent from "../ShopComponent/ShopComponent";
 import ItemComponent from "../ItemComponent/ItemComponent";
 
