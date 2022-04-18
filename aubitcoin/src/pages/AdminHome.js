@@ -2,19 +2,18 @@ import "../App.css";
 import React, { useState } from "react";
 import { getUserToken, saveUserToken, clearUserToken } from "../localStorage";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import AnalyticsIcon from '@mui/icons-material/Analytics';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AnalyticsIcon from "@mui/icons-material/Analytics";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import {
   IconButton,
   Box,
   List,
   ListItem,
   Icon,
+  Typography,
 } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { SERVER_URL } from "../App";
-
-
 
 function AdminHome() {
   const navigate = useNavigate();
@@ -86,8 +85,18 @@ function AdminHome() {
         </Box>
 
         <Box className="mainContent">
-            Homeee
-
+          <img className="bubbles" src={require("../graphics/bubbles.png")} />
+          <Typography
+            sx={{
+              color: "white",
+              fontWeight: "bolder",
+              marginLeft: "5rem",
+              marginTop: "5rem",
+            }}
+            variant="h4"
+          >
+            Welcome Admin
+          </Typography>
         </Box>
       </Box>
     </div>

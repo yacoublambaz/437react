@@ -132,3 +132,21 @@ body::-webkit-scrollbar-thumb {
 html {
   overflow: hidden;
 }
+
+
+.wrapper {
+  font-family: Arial;
+  margin-top: 50px;
+  width: 30vw;
+  background-color: var(--ourGrey);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formBox{
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}

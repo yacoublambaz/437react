@@ -10,11 +10,25 @@ import {
   List,
   ListItem,
   Icon,
+  createTheme,
+  TextField,
+  Typography,
 } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { SERVER_URL } from "../App";
+import { ThemeProvider } from "@emotion/react";
 
 
+let theme = createTheme({
+  palette: {
+    primary:{
+      main: "#191D24"
+    },
+    secondary: {
+      main : "#ffffff"
+    }
+  }
+})
 
 function ShopAdd() {
   const navigate = useNavigate();
@@ -47,6 +61,8 @@ function ShopAdd() {
   let [authState, setAuthState] = useState(States.PENDING);
 
   return (
+
+    <ThemeProvider theme={theme}>
     <div className="App">
       <Box display="flex" flexDirection="row">
         <Box className="navbar">
@@ -86,11 +102,74 @@ function ShopAdd() {
         </Box>
 
         <Box className="mainContent">
-            Add
+        <Box className="formBox" display="flex" flexDirection="row">
+              <div className="wrapper">
+                <Typography
+                  sx={{ fontFamily: "Arial Black", color: "black" }}
+                  variant="h5"
+                  margin={"1rem"}
+                >
+                  Add Items
+                </Typography>
+
+                <TextField
+                  sx={{margin: "1rem"}}
+                  type="text"
+                  //value={itemQuantity}
+                  label="Item Name"
+                  //onChange={(e) => setItemQuantity(e.target.value)}
+                />
+
+                <TextField
+                  sx={{margin: "1rem"}}
+                  type="number"
+                  //value={itemQuantity}
+                  label="Item Pirce"
+                  //onChange={(e) => setItemQuantity(e.target.value)}
+                />
+
+                <TextField
+                  sx={{margin: "1rem"}}
+                  type="number"
+                  //value={itemQuantity}
+                  label="Item Quantity"
+                  //onChange={(e) => setItemQuantity(e.target.value)}
+                />
+
+                <TextField
+                  sx={{margin: "1rem"}}
+                  type="text"
+                  //value={itemQuantity}
+                  label="Item Description"
+                  multiline
+                  rows={3}
+                  //onChange={(e) => setItemQuantity(e.target.value)}
+                />
+              </div>
+              <div className="wrapper">
+                <Typography
+                  sx={{ fontFamily: "Arial Black", color: "black" }}
+                  variant="h5"
+                  margin={"1rem"}
+                >
+                  Update Items
+                </Typography>
+
+                <TextField
+                  sx={{margin: "1rem"}}
+                  type="text"
+                  //value={itemQuantity}
+                  label="Search Item"
+                  //onChange={(e) => setItemQuantity(e.target.value)}
+                />
+
+              </div>
+            </Box>
 
         </Box>
       </Box>
     </div>
+    </ThemeProvider>
   );
 }
 export default ShopAdd;
